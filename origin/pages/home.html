@@ -1,0 +1,723 @@
+<style>
+    /* HEADER */
+
+    #navbar_site {
+        background: black;
+    }
+
+    .navbar-inverse-home {
+        background-color:rgb(6,10,12);
+        border:0;
+    }
+    .navbar-inverse-home .navbar-nav-home>li>a {
+        padding:0;
+        padding-left:14px;
+        padding-right:10px;
+        text-align: center;
+        font:normal 18px/18px Arial, Helvetica, sans-serif;
+        color:rgb(134,134,134);
+        -webkit-transition:color 0.5s ease;
+    }
+    .navbar-inverse-home .navbar-nav-home>li>a:visited {
+        color:rgb(134,134,134);
+    }
+    .navbar-inverse-home .navbar-nav-home>li>a:hover {
+        color:#FFF;
+    }
+    .navbar-inverse-home .navbar-nav-home>li:nth-child(2)>a{
+        background:none;
+    }
+    .navbar-inverse-bar-customer { background-color:#000; border:0px; }
+
+    .navbar-li-site>a {
+        font-size:12px !important;
+        font-weight:bold !important;
+    }
+
+    /* Nav Bar width 750px Settled */
+    @media (max-width: 991px) {
+        footer>div>div.bottom_navigator_inner {
+            text-align:center;
+        }
+    }
+    @media (max-width: 750px) {
+    }
+    @media (max-width: 500px) {
+    }
+    @media (min-width: 501px) {
+    }
+    @media (max-width: 767px) {
+        .navbar-inverse-home .navbar-nav-home>li {
+            height:44px !important;
+            line-height:44px !important;
+        }
+        .navbar-inverse-home .navbar-nav-home>li>a {
+            height:44px;
+            line-height:44px;
+        }
+        .navbar-nav-home>li:first-child, .navbar-nav-home>li:nth-child(2) { display:none; }
+        .navbar-header-home  {background:url("/img/logo.png") no-repeat 30% 50% #000000;}
+        .navbar-inverse-home .navbar-nav-home>li:nth-child(3) {
+            display:block;
+        }
+        .table {
+            font-size: 12px;;
+        }
+    }
+    @media (min-width: 768px) {
+        .container { width:719px; padding:0 !important; }
+        .container-bar-customer { height:36px; }
+        .navbar-inverse-bar-customer { margin:0; background:transparent; }
+        .navbar-nav { width:100%; }
+        .navbar-wrapper-home { margin:0; }
+        .navbar-inverse-home .navbar-nav-home>li:nth-child(2)>a{
+            background:url("/img/logo.png") no-repeat center #000000;
+            width:184px;
+        }
+        .navbar-li-site {
+            padding-left:10px !important;
+        }
+        .navbar-li-site:last-child {
+            padding-left:63px !important;
+        }
+        .navbar-li-site:first-child
+        , .navbar-li-site:nth-child(2)
+        , .navbar-li-site:nth-child(3)
+        , .navbar-li-site:nth-child(4)	 {
+            padding-left:0 !important;
+        }
+        .navbar-inverse-home .navbar-nav-home>li {
+            padding-left:50px;
+            height:74px;
+        }
+        .navbar-inverse-home .navbar-nav-home>li>a {
+            height:74px;
+            line-height:74px;
+        }
+        .navbar-inverse-home .navbar-nav-home>li:nth-child(3) {
+            padding-left:100px;
+        }
+        .navbar-inverse-home .navbar-nav-home>li:nth-child(2) {
+            padding-left:0;
+        }
+        .navbar-inverse-home .navbar-nav-home>li:nth-child(3) {
+            display:none;
+        }
+        .firstTwoProductComboName, .thirdProductComboName,
+        .firstTwoProductComboPrice, .thirdProductComboPrice {
+            font-size: 20px;;
+        }
+    }
+    @media (min-width: 850px) {
+        .navbar-nav-home>li:first-child { width:5%; }
+        .container-100-percent { width:100% !important; }
+    }
+    @media (min-width: 900px) {
+        .navbar-nav-home>li:first-child { width:9%; }
+        .container-100-percent { width:100% !important; }
+    }
+    @media (min-width: 992px) {
+        .navbar-nav-home>li:first-child { width:13%; }
+        .container { width:719px; padding:0 !important; }
+        .container-100-percent { width:100% !important; }
+        .navbar-li-site>a {
+            font-size:14px !important;
+        }
+        footer>div>div.bottom_navigator_inner {
+            width:70%;
+        }
+    }
+    @media (min-width: 1200px) {
+        .navbar-nav-home>li:first-child { width:18%; }
+        .container { width:719px; padding:0 !important; }
+        .container-100-percent { width:100% !important; }
+        .navbar-li-site>a {
+            font-size:16px !important;
+        }
+    }
+    @media (min-width: 1900px) {
+        .navbar-nav-home>li:first-child { width:23.35%; }
+        .container { width:719px; padding:0 !important; }
+        .container-100-percent { width:100% !important; }
+        .navbar-li-site>a {
+            font-size:20px !important;
+        }
+    }
+
+    /* .input-xs {
+        padding-top:2px;
+        padding-bottom:2px;
+        height:22px;
+        border-radius:0;
+        line-height:1;
+    } */
+
+
+    /* FOOTER */
+    .footer-padding {
+        height:50px;
+        background:#FFF;
+    }
+    .footer-padding {
+        height:50px;
+        background:#FFF;
+    }
+    footer>div.bottom_navigator {
+        background:rgb(38,38,38);
+        width:100%;
+    }
+    footer>div>div.bottom_navigator_inner {
+        margin:0 auto; padding:20px 0;
+    }
+    footer>div>div.bottom_navigator_inner>ul {
+        margin:0;
+        padding:20px 0;
+    }
+    footer>div>div.bottom_navigator_inner>ul>li {
+        padding:4px 0;
+    }
+    footer>div>div.bottom_navigator_inner>ul>li>strong {
+        color:rgb(219,220,221);
+    }
+    footer>div>div.bottom_navigator_inner>ul>li>a {
+        color:rgb(113,113,113); font-size:12px; text-decoration:none;
+        -webkit-transition:color 0.5s ease;
+    }
+    footer>div>div.bottom_navigator_inner>ul>li>a:hover {
+        color:#FFF;
+    }
+    footer>div>div.bottom_navigator_inner>ul>li>p {
+        color:rgb(113,113,113);
+        font-size:12px;
+        margin:0;
+    }
+    footer>div.copy_right {
+        text-align:center; background:rgb(38,38,38); color:rgb(219,220,221); font-weight:bold;
+        padding:20px 0;
+    }
+    .page-body-outer { background:url("/img/body-bg.png") fixed #000000 no-repeat; }
+
+    .firstTwoProductComboName {
+        background-color: rgb(82,181,213); padding: 10px; border-radius: 6px 6px 0 0;
+    }
+    .firstTwoProductComboPrice {
+        background-color: rgb(99,194,221); padding: 10px;
+    }
+    .firstTwoProductComboPayFrequency {
+        background-color: rgb(99,194,221); padding: 4px; border-radius: 0 0 6px 6px; font-size: 12px;
+    }
+    .thirdProductComboName {
+        background-color: rgb(27,127,179); padding: 10px; border-radius: 6px 6px 0 0;
+    }
+    .thirdProductComboPrice {
+        background-color: rgb(70,174,210); padding: 10px;
+    }
+    .thirdProductComboPayFrequency {
+        background-color: rgb(70,174,210); padding: 4px; border-radius: 0 0 6px 6px; font-size: 12px;
+    }
+
+</style>
+<div home-directive>
+    <div id="header_navigator" class="navbar-wrapper navbar-wrapper-home" style="position:fixed;">
+        <div class="container" style="width:100%;">
+
+                <nav class="navbar navbar-inverse navbar-inverse-home navbar-static-top" role="navigation" style="margin:0; border-radius:0;">
+                    <div class="container" style="width:100%;">
+                        <div class="navbar-header navbar-header-home">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar_site">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar_site" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-nav-home navbar-nav-site">
+                                <li class="navbar-li-site"></li>
+                                <li class="navbar-li-site"><a href="javascript:void(0);" data-val="home_top_bg_div" data-name="navigator_target"></a></li>
+                                <li class="navbar-li-site"><a href="javascript:void(0);" data-val="home_top_bg_div" data-name="navigator_target">Home</a></li>
+                                <li class="navbar-li-site"><a href="javascript:void(0);" data-val="how_it_works" data-name="navigator_target">How it works</a></li>
+                                <li class="navbar-li-site"><a href="javascript:void(0);" data-val="promotion_bg_div" data-name="navigator_target">Benefits</a></li>
+                                <li class="navbar-li-site"><a href="javascript:void(0);" data-val="related_method" data-name="navigator_target">Features</a></li>
+                                <li class="navbar-li-site"><a href="javascript:void(0);" data-val="price_div" data-name="navigator_target">Price</a></li>
+                                <li class="navbar-li-site"><a href="/support_center">Support Centre</a></li> <!-- data-val="solution_div" data-name="navigator_target" -->
+                                <li class="navbar-li-site"><a href="http://sh.greenspot.net.nz/mxsoft/login.php">Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+
+
+
+
+    <!-- BEGIN Menu -->
+    <div id="home_top_bg_div" style="text-align:center;">
+
+        <div id="menu_description_p">
+            <h3>GreenSpot</h3>
+            <h4>Provide your customers with</h4>
+            <h3>Social WiFi</h3>
+            <p id="menu_description_p_content">
+                Get you closer to customers<br/>
+                Use your WiFi as a social media tool and marketing platform, boost your online exposure and<br/>
+                collect useful information about your visitors and customers.<br/>
+            </p>
+            <div class="col-md-2">
+                <a id="apply_a1" href="javascript:void(0);" data-val="price_div" data-name="navigator_target">APPLY</a>
+            </div>
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-2">
+                <a id="play_video" href="javascript:void(0);">WATCH VIDEO</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- END Menu -->
+
+    <!-- BEGIN Carousel -->
+    <section id="how_it_works" width="100%">
+        <div id="home_top_bg_div_2">
+            <div id="home_top_bg_div_2_carousel_bg">
+                <div id="home_top_bg_div_2_carousel_img">
+                    <div id="mobileStepCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active" data-step="1" >
+                                <!--                     			<a href="step1"> -->
+                                <img src="/img/home-top-carousel-img1.png" class="hidden-xs hidden-sm" alt="" />
+                                <img src="/img/home-top-carousel-img1.png" class="hidden-lg hidden-md" alt="" />
+                                <!--                     			</a> -->
+                            </div>
+                            <div class="item" data-step="2" >
+                                <!--                     			<a href="step2"> -->
+                                <img src="/img/home-top-carousel-img2.png" class="hidden-xs hidden-sm" alt="" />
+                                <img src="/img/home-top-carousel-img2.png" class="hidden-lg hidden-md" alt="" />
+                                <!--                     			</a> -->
+                            </div>
+                            <div class="item" data-step="3" >
+                                <!--                     			<a href="step3"> -->
+                                <img src="/img/home-top-carousel-img3.png" class="hidden-xs hidden-sm" alt="" />
+                                <img src="/img/home-top-carousel-img3.png" class="hidden-lg hidden-md" alt="" />
+                                <!--                     			</a> -->
+                            </div>
+                            <div class="item" data-step="4" >
+                                <!--                     			<a href="step4"> -->
+                                <img src="/img/home-top-carousel-img4.png" class="hidden-xs hidden-sm" alt="" />
+                                <img src="/img/home-top-carousel-img4.png" class="hidden-lg hidden-md" alt="" />
+                                <!--                     			</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_row">
+                    <div>
+                        <div class="carousel_row_inner">
+                            <h3>How does it work?</h3>
+                            <p>
+                                Greenspot solution represent fully branded user experience. The consumer is welcomed with a branded splash page and guided to the internet. Advertiser can enable social media network authentication or simple click-through login. Ads are displayed on the second screen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel_steps_guide">
+                        <div class="carousel_steps_guide_title">
+                            <span>Steps for using</span>&nbsp;<span>FREE Wi-Fi</span>
+                        </div>
+                        <ul class="carousel_steps_guide_list carousel-indicators">
+                            <li data-target="#mobileStepCarousel" data-slide-to="0" data-name="carousel_steps_guide_list_li" data-step="1" class="active">Step 1. Set up Wi-Fi connection</li>
+                            <li data-target="#mobileStepCarousel" data-slide-to="1" data-name="carousel_steps_guide_list_li" data-step="2">Step 2. Login with preferred methods</li>
+                            <li data-target="#mobileStepCarousel" data-slide-to="2" data-name="carousel_steps_guide_list_li" data-step="3">Step 3. Promotion</li>
+                            <li data-target="#mobileStepCarousel" data-slide-to="3" data-name="carousel_steps_guide_list_li" data-step="4">Step 4. Enjoy Free Wi-Fi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Carousel -->
+
+    <!-- BEGIN Promotion -->
+    <div id="promotion_bg_wrap">
+        <div id="promotion_div_bg">
+        </div>
+        <div id="promotion_bg_div">
+            <h3>Setup your E-shop</h3>
+            <p>
+                Promote your brand with your very own E-store.<br/>
+                Make your brand visible!
+                <a href="/more_e_shop" class="btn btn-lg btn-success">More</a>
+            </p>
+            <img id="promotion_bg_div_img" src="/img/promotion-bg.png">
+        </div>
+    </div>
+    <!-- END Promotion -->
+
+
+    <div id="related_method" class="related_method">
+        <h3 style="color:#000;">Greenspot allows users to gain free access to a public WiFi through their <a target="_blank" href="https://www.facebook.com/pages/Greenspot-WiFi/339798362879714?fref=ts" style="color:rgb(43,147,201); text-decoration:none;">Facebook</a> or <a target="_blank" href="https://twitter.com/GreenspotWiFi" style="color:rgb(201,42,42); text-decoration:none;">Twitter</a><br/>accounts.</h3>
+        <br/><br/>
+        <div id="related_method_list_div">
+            <ul class="col-md-4">
+                <li>
+                    <img alt="WeChat" src="/img/related_method_img1.png"><br/><br/>
+                </li>
+            </ul>
+            <ul class="col-md-4">
+                <li>
+                    <img alt="Mobile" src="/img/related_method_img2.png"><br/><br/>
+                </li>
+            </ul>
+            <ul class="col-md-4">
+                <li>
+                    <img alt="Membership" src="/img/related_method_img3.png">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BEGIN Customs -->
+    <div id="customs_div">
+        <div id="customs_div_bg">
+        </div>
+        <div id="customs_div_content">
+            <h3>Know your customers better</h3>
+            <div id="customs_div_content_list">
+                <ul class="col-md-3">
+                    <li>
+                        <p>
+                            With a centralized management platform, you will be able to access information about your customers and communicate with them,
+                            inviting them to return with <span>special offers</span>
+                        </p>
+                    </li>
+                </ul>
+                <ul class="col-md-9">
+                    <li>
+                        <img alt="" src="/img/customs_img.png">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END Customs -->
+
+
+    <!-- BEGIN Router -->
+    <div id="router_div" style="background:rgb(248,248,247);">
+        <div id="router_div_list">
+            <ul class="col-md-4">
+                <li class="content_li">
+                    <h4>Quick installation</h4>
+                    <p>
+                        Installation has never been easier, just plug and play.
+                    </p>
+                </li>
+                <li class="padding_li">&nbsp;</li>
+                <li class="content_li">
+                    <h4>Easy to manage</h4>
+                    <p>
+                        With our user-friendly interface, customer information and data usage can be managed in a few clicks.
+                    </p>
+                </li>
+            </ul>
+            <ul class="col-md-4">
+                <li class="content_li_img">
+                    <img alt="" src="/img/router_img.png">
+                </li>
+            </ul>
+            <ul class="col-md-4">
+                <li class="content_li">
+                    <h4>Bandwidth limiting</h4>
+                    <p>
+                        Your bandwidth is entirely up to you to distribute. Your Internet, you control it.
+                    </p>
+                </li>
+                <li class="padding_li">&nbsp;</li>
+                <li class="content_li">
+                    <h4>Safe data</h4>
+                    <p>
+                        Avoid malicious tampering of DNS and phishing website
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END Router -->
+
+
+    <!-- BEGIN Cost -->
+    <div id="technical_support_div" style="background:rgb(248,248,247);">
+        <hr style="margin-top:0; border-color:#000; height:1px;"/>
+        <div class="container technical_support_container">
+            <div class="panel-group" id="accordion" role="tablist">
+                <h4 class="panel-title">
+                    <a id="technical_information_a" class="header collapsed" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="javascript:void(0);" aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none; line-height:30px; display:block;">
+                        <div style="background:rgb(101,101,101); color:#FFF; padding:1px 8px; font-size:26px; border:1px solid rgb(101,101,101); display:inline-block; border-radius:6px;"><div id="technical_information_span" style="display:inline-block;">+</div></div>&nbsp;&nbsp;&nbsp;<strong style="font-size:24px;">TECHNICAL INFORMATION</strong>
+                    </a>
+                </h4>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body content" style="text-align:left;">
+                        <ul class="technical_support_column">
+                            <li>
+                                <strong class="technical_support_title">MODEL:</strong>
+                                <p class="technical_support_description">MX-30</p>
+                                <br/><br/>
+                                <strong class="technical_support_title">DIMENSIONS (LXPXA):</strong>
+                                <p class="technical_support_description">170 x 100 x 25mm</p>
+                                <br/><br/>
+                                <strong class="technical_support_title">Carrying capacity:</strong>
+                                <p class="technical_support_description">30 devices</p>
+                            </li>
+                        </ul>
+                        <ul class="technical_support_column">
+                            <li>
+                                <strong class="technical_support_title">INTERFACES:</strong>
+                                <p class="technical_support_description">4 10/100Mbps LAN PORTS</p>
+                                <p class="technical_support_description">1 10/100Mbps WAN PORT</p>
+                                <br/>
+                                <strong class="technical_support_title">FREQUENCY:</strong>
+                                <p class="technical_support_description">2.4 GHz</p>
+                            </li>
+                        </ul>
+                        <ul class="technical_support_column">
+                            <li>
+                                <strong class="technical_support_title">POWER SUPPLY:</strong>
+                                <p class="technical_support_description">5VDC / 1A</p>
+                                <br/><br/>
+                                <strong class="technical_support_title">SIGNAL STRENGTH 11N:</strong>
+                                <p class="technical_support_description">Up to 300Mbps(dyn), 11g: Up to 54Mbps(dyn), 11b: Up to 11Mbps(dyn)</p>
+                            </li>
+                        </ul>
+                        <ul class="technical_support_column">
+                            <li>
+                                <strong class="technical_support_title">STANDARD WIRELESS:</strong>
+                                <p class="technical_support_description">EEE 802.11b/g/n IEEE 802.3/u</p>
+                                <p class="technical_support_description">IEEE 802.3af</p>
+                                <br/>
+                                <strong class="technical_support_title">EIRP:</strong>
+                                <p class="technical_support_description"><20dBm(EIRP)</p>
+                            </li>
+                        </ul>
+                        <ul class="technical_support_column">
+                            <li>
+                                <strong class="technical_support_title">ANTENNAS:</strong>
+                                <p class="technical_support_description">2 detachable omnidirectional 5dBi</p>
+                                <br/>
+                                <strong class="technical_support_title">SENSITIVITY 270M:</strong>
+                                <p class="technical_support_description">-55dBm@10% PER 150M:</p>
+                                <p class="technical_support_description">-68dBm@10% PER 130M:</p>
+                                <p class="technical_support_description">-78dBm@10% PER 105M:</p>
+                                <p class="technical_support_description">-85dBm@8% PER  55M:</p>
+                                <p class="technical_support_description">-88dBm@10% PER 11M:</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr style="margin-top:0; border-color:#000; height:1px;"/>
+        <strong style="color:rgb(28,127,179);">How much does it cost?</strong>
+    </div>
+    <!-- END Cost -->
+
+    <!-- BEGIN Price -->
+    <div id="price_div">
+        <br/><br/>
+        <div style="margin:0 auto;">
+            <table class="table" width="100%">
+                <thead>
+                <tr>
+                    <th colspan="2">&nbsp;</th>
+                    <th ng-repeat="productCombo in productCombos" style="text-align: center; color: #ffffff;" class="product_combo_th">
+                        <div ng-class="{ firstTwoProductComboName : $index < productCombos.length-1, thirdProductComboName : $index == productCombos.length-1  }">
+                            {{ productCombo.name }}
+                        </div>
+                        <div ng-class="{ firstTwoProductComboPrice : $index < productCombos.length-1, thirdProductComboPrice : $index == productCombos.length-1  }">
+                            NZ$&nbsp;{{ productCombo.fee_on_home_page }}
+                        </div>
+                        <div ng-class="{ firstTwoProductComboPayFrequency : $index < productCombos.length-1, thirdProductComboPayFrequency : $index == productCombos.length-1  }">
+                            {{ productCombo.pay_frequency_on_home_page }}
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="productFeature in productFeatures">
+                    <td colspan="2">{{ productFeature.name }}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-ok" ng-repeat="feature_id in productCombos[0].feature_ids" ng-show="productFeature.id===feature_id"></span>
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-ok" ng-repeat="feature_id in productCombos[1].feature_ids" ng-show="productFeature.id===feature_id"></span>
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-ok" ng-repeat="feature_id in productCombos[2].feature_ids" ng-show="productFeature.id===feature_id"></span>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                    <td>
+                        <a href="/payment/{{ productCombos[0].id }}" class="small-display"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                        <a href="/payment/{{ productCombos[0].id }}" class="large-display">Choose</a>
+                    </td>
+                    <td>
+                        <a href="/payment/{{ productCombos[1].id }}" class="small-display"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                        <a href="/payment/{{ productCombos[1].id }}" class="large-display">Choose</a>
+                    </td>
+                    <td>
+                        <a href="/payment/{{ productCombos[2].id }}" class="small-display"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                        <a href="/payment/{{ productCombos[2].id }}" class="large-display">Choose</a>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!-- END Price -->
+
+
+    <!-- BEGIN Solution -->
+    <div id="solution_div">
+        <div id="promotion_div_bg">
+        </div>
+        <div id="solution_div_list">
+            <div id="solution_div_list_inner">
+                <h3 class="col-md-12">Applicable Situation</h3>
+                <ul class="col-md-1"></ul>
+                <ul class="col-md-2">
+                    <li>
+                        <img alt="WeChat" src="/img/solution_img_business_circle.png"><br/><br/>
+                        <span>Salon</span>
+                    </li>
+                </ul>
+                <ul class="col-md-2">
+                    <li>
+                        <img alt="WeChat" src="/img/solution_img_entertainment.png"><br/><br/>
+                        <span>Entertainment</span>
+                    </li>
+                </ul>
+                <ul class="col-md-2">
+                    <li>
+                        <img alt="WeChat" src="/img/solution_img_restaurant.png"><br/><br/>
+                        <span>Restaurant</span>
+                    </li>
+                </ul>
+                <ul class="col-md-2">
+                    <li>
+                        <img alt="WeChat" src="/img/solution_img_hotel.png"><br/><br/>
+                        <span>Hotel</span>
+                    </li>
+                </ul>
+                <ul class="col-md-2">
+                    <li>
+                        <img alt="WeChat" src="/img/solution_img_shopping_mall.png"><br/><br/>
+                        <span>Shopping mall</span>
+                    </li>
+                </ul>
+                <ul class="col-md-1"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- END Solution -->
+
+
+    <!-- BEGIN Solution -->
+    <div id="contact_us_div">
+        <div id="contact_us_div_content">
+            <div id="contact_us_div_content_inner">
+                <h3>Contact Us</h3>
+                <form  ng-submit="submitContact()">
+                    <ul class="col-md-6">
+                        <li>
+                            <textarea id="contact_us_request" rows="3" ng-model="contactUs.message" placeholder="Message:"></textarea>
+                        </li>
+                    </ul>
+                    <ul class="col-md-6">
+                        <li>
+                            <input id="contact_us_email" type="text" name="email" ng-model="contactUs.email" placeholder="Email:" />
+                            <input id="contact_us_submit" type="submit" name="submit" ng-disabled="isSubmitDisabled" value="Send {{contactUs.countDown !== 0 ? contactUs.countDown : 'Again?'}}" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END Solution -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="viewVideoModal" tabindex="-1" role="dialog" aria-labelledby="viewVideoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" id="view_video_dialog" style="height:50%; width:70%;">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="ytplayer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /END THE FEATURETTES -->
+    <!-- FOOTER -->
+    <div class="footer-padding"></div>
+    <footer>
+        <div class="container bottom_navigator">
+            <div class="bottom_navigator_inner">
+                <ul class="col-md-3">
+                    <li>
+                        <img alt="" ng-src="/img/footer_logo.png">
+                    </li>
+                </ul>
+                <ul class="col-md-3">
+                    <li>
+                        <a ng-href="javascript:void(0);">&nbsp;</a>
+                    </li>
+                    <li>
+                        <a ng-href="/support_center/about">About</a>
+                    </li>
+                    <li>
+                        <a ng-href="/support_center/terms">Terms</a>
+                    </li>
+                    <li>
+                        <a ng-href="/support_center/refund">Refund</a>
+                    </li>
+                </ul>
+                <ul class="col-md-3">
+                    <li>
+                        <strong>CONATACTS</strong>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/pages/Greenspot-WiFi/339798362879714?fref=ts">Facebook</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://twitter.com/GreenspotWiFi">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">E-mail</a>
+                    </li>
+                </ul>
+                <ul class="col-md-3">
+                    <li>
+                        <strong>INFORMATION</strong>
+                    </li>
+                    <li>
+                        <p>Greenspot</p>
+                    </li>
+                    <li>
+                        <p>
+                            Office 5, 945A  Newnorth Rd,<br/>
+                            Auckland, Newzealand
+                        </p>
+                    </li>
+                    <li>
+                        <p>0800 00 1747</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--<div class="col-lg-12 copy_right">-->
+        <!--Copyright &copy; 2015 Greenspot. All Rights Reserved.-->
+        <!--</div>-->
+    </footer>
+</div>

@@ -1,0 +1,42 @@
+<html>
+<head>
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GreenSpot: Closer Connect To Customer</title>
+    <link rel="shortcut icon" type="image/ico" href="/img/icon.png"/>
+    <link href="css/styles-vendor.min.css" rel="stylesheet" />
+    <link href="css/styles-custom.min.css" rel="stylesheet" />
+</head>
+<body ng-app="GreenSpotApp">
+
+    <div ng-switch on="$root.currentNav">
+        <div ng-switch-when="/manager">
+            <ng-include src="'pages/manager/header.html'"></ng-include>
+        </div>
+        <div ng-switch-when="/support_center">
+            <ng-include src="'pages/support_center/header.html'"></ng-include>
+        </div>
+        <div ng-switch-default></div>
+    </div>
+
+    <div class="page-body-outer">
+        <div ng-view class="page-body"></div>
+    </div>
+
+    <div ng-switch on="$root.currentNav">
+        <div ng-switch-when="/manager">
+            <ng-include src="'pages/manager/footer.html'"></ng-include>
+        </div>
+        <div ng-switch-when="/support_center">
+            <ng-include src="'pages/support_center/bottom-nav.html'"></ng-include>
+        </div>
+        <div ng-switch-default></div>
+    </div>
+
+    <script src="js/scripts-vendor.min.js"></script>
+    <script src="js/scripts-custom.min.js"></script>
+    <script src="lang/en.js"></script>
+</body>
+</html>

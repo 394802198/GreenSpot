@@ -1,0 +1,133 @@
+<style>
+    .dropdown-menu>li>a {
+        color: #3c763d !important;
+    }
+    @media (min-width: 768px) {
+        .navbar {
+            height: 6%;
+        }
+    }
+    .navbar {
+        margin-bottom:0;
+    }
+    .nav-animate-show.ng-hide-add.ng-hide-add-active {
+        -webkit-transition:all linear 0.5s;
+        transition:all linear 0.5s;
+    }
+    .nav-animate-show.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 1s;
+        transition:all linear 1s;
+    }
+    .nav-animate-show.ng-hide {
+        opacity:0;
+    }
+    .page-body-outer { height: 84%; }
+</style>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img height="100%" src="/img/icon.png" /></a>
+        </div>
+
+        <div ng-hide="!isLoggedIn" class="nav-animate-show">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/manager/home"><strong class="text-success">Home&nbsp;<span class="fa fa-home"></span></strong></a></li>
+                </ul>
+                <!-- Contact Us Module -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong class="text-success"><span class="fa fa-angle-double-down"></span>&nbsp;Contact Us&nbsp;<span class="fa fa-twitch"></span></strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/manager/contact_us/message/all">All Messages&nbsp;<span class="fa fa-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Service Module -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong class="text-success"><span class="fa fa-angle-double-down"></span>&nbsp;Service&nbsp;<span class="fa fa-wifi"></span></strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">New Service&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="#">All Services&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">All Provisions&nbsp;<span class="fa fa-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Billing Module -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong class="text-success"><span class="fa fa-angle-double-down"></span>&nbsp;Billing&nbsp;<span class="fa fa-dollar"></span></strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">New Billing&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="#">All Billings&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">New Invoice&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="#">All Invoices&nbsp;<span class="fa fa-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Sales Module -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong class="text-success"><span class="fa fa-angle-double-down"></span>&nbsp;Sales&nbsp;<span class="fa fa-diamond"></span></strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">New Sales&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="#">All Sales&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">All Sell&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="#">All Commission&nbsp;<span class="fa fa-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Managers Module -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong class="text-success"><span class="fa fa-angle-double-down"></span>&nbsp;Manager&nbsp;<span class="fa fa-users"></span></strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/manager/new">New Manager&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="/manager/all">All Managers&nbsp;<span class="fa fa-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Product Module -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong class="text-success"><span class="fa fa-angle-double-down"></span>&nbsp;Product&nbsp;<span class="fa fa-dropbox"></span></strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/manager/product/product_combo/new">New Product Combo&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="/manager/product/product_combo/all">All Product Combos&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/manager/product/product_feature/new">New Product Feature&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="/manager/product/product_feature/all">All Product Features&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/manager/product/plan/new">New Plan&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="/manager/product/plan/all">All Plans&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/manager/product/device/new">New Device&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="/manager/product/device/all">All Devices&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/manager/product/addon_service/new">New Add-On Service&nbsp;<span class="fa fa-link"></span></a></li>
+                            <li><a href="/manager/product/addon_service/all">All Add-On Services&nbsp;<span class="fa fa-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Right function bar -->
+                <ul class="nav navbar-nav navbar-right" ng-controller="SessionController">
+                    <li><a href="/manager/my_profile" ng-click="getManagerSession()"><strong class="text-success">My Profile&nbsp;<span class="fa fa-user-secret"></span></strong></a></li>
+                    <li><a href="#" ng-click="logout()"><strong class="text-success">Logout&nbsp;<span class="fa fa-sign-out"></span></strong></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>

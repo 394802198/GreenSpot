@@ -1,0 +1,100 @@
+<!-- First Row -->
+<style>
+    .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+    .table>thead>tr>th {
+        font-size: 14px;;
+    }
+    .table td {
+        font-size: 12px;;
+    }
+
+    .pagination-ul.ng-enter, .pagination-ul.ng-leave {
+        transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all, 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) opacity;
+    }
+    .pagination-ul.ng-enter {
+        transform:translateX(100%);
+    }
+    .pagination-ul.ng-leave {
+        transform:translateX(0%);
+    }
+    .pagination-ul.ng-enter.ng-enter-active, .pagination-ul.ng-leave {
+        transform:translateX(0%);
+        opacity: 1;
+        top: 0;
+        height: 30px;
+    }
+    .pagination-ul.ng-leave.ng-leave-active {
+        transform:translateX(-100%);
+    }
+    .pagination-ul.ng-leave.ng-leave-active, .pagination-ul.ng-enter {
+        opacity: 0;
+        top: -50px;
+        height: 0px;
+    }
+</style>
+<div class="row panel-body">
+
+    <!-- All Managers -->
+    <div class="col-md-12">
+        <div class="panel panel-success">
+            <!-- Success panel contents -->
+            <div class="panel-heading text-center"><strong><span class="fa fa-cubes">&nbsp;</span>All Product Features</strong></div>
+            <div class="panel-body">
+
+                <div class="col-md-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Filter any keyword</label>
+                            <div class="col-md-4">
+                                <input class="form-control" ng-model="pagination.keywords" type="text" placeholder="Enter something to filter data" ng-keyup="filterProductFeature()" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-12 text-center">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Sequence</th>
+                                    <th>Home Page</th>
+                                    <th>OPERATION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="pagination-ul" dir-paginate="productFeature in pagination.productFeatures | filter:pagination.keywords | itemsPerPage: pagination.pageSize track by $id($index)" current-page="pagination.currentPage" ng-init="outerIndex=$index;">
+                                    <td ng-repeat="column in productFeature track by $id($index)" ng-if="$index>=1">
+                                    <span ng-if="$index==1">
+                                        <a class="text-success" href="/manager/product/product_feature/edit/{{ productFeature[0] }}/{{ productFeature[3] }}">{{ column }}&nbsp;<span class="fa fa-link"></span></a>
+                                    </span>
+                                        {{ $index>1 && $index!=2 ? column : '' }}
+                                    <span ng-if="$index==2">
+                                        &nbsp;&nbsp;
+                                        <span ng-if="outerIndex==0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span ng-if="outerIndex>=1"><a class="btn btn-xs btn-info" tooltip="Click to go UP!" tooltip-class="infoClass" ng-click="goUp(productFeature[0])"><span class="fa fa-arrow-up"></span></a>&nbsp;</span>
+                                        <span ng-if="outerIndex<=pagination.realLength-2"><a class="btn btn-xs btn-info" tooltip="Click to go DOWN!" tooltip-class="infoClass" ng-click="goDown(productFeature[0])"><span class="fa fa-arrow-down"></span></a></span>
+                                    </span>
+                                    </td>
+                                    <td ng-repeat="column in productFeature track by $id($index)" ng-if="$index==0">
+                                        <a class="btn btn-danger btn-md" tooltip="Click to DELETE FOREVER!" tooltip-class="dangerClass" ng-click="deleteProductFeature(productFeature[0])"><span class="fa fa-trash"></span></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="panel-footer">
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChange(newPageNumber)"></dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+
+</div>

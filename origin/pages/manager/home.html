@@ -1,0 +1,144 @@
+<!-- First Row -->
+
+<div class="row panel-body">
+
+    <!-- Contact Us Module -->
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><strong><span class="fa fa-twitch">&nbsp;</span>Contact Us</strong></div>
+            <div class="panel-body">
+                <p><i>Contact Us management module</i></p>
+            </div>
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/manager/contact_us/message/all" class="text-success">All Messages&nbsp;<span class="fa fa-link"></span></a>&nbsp;<span class="label" ng-class="{ 'label-danger':home_info.messageNotRepliedLength>=1, 'label-success':home_info.messageNotRepliedLength<=0  }">{{ home_info.messageNotRepliedLength }}/{{ home_info.messageLength }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Service Module -->
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><strong><span class="fa fa-wifi">&nbsp;</span>Service</strong></div>
+            <div class="panel-body">
+                <p><i>Customer service management module</i></p>
+            </div>
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="#" class="text-success">New Service&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="#" class="text-success">All Services&nbsp;<span class="fa fa-link"></span></a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" class="text-success">All Provisions&nbsp;<span class="fa fa-link"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Billing Module -->
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><strong><span class="fa fa-dollar">&nbsp;</span>Billing</strong></div>
+            <div class="panel-body">
+                <p><i>Customer billing & invoicing management module</i></p>
+            </div>
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="#" class="text-success">New Billing&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="#" class="text-success">All Billings&nbsp;<span class="fa fa-link"></span></a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" class="text-success">New Invoice&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="#" class="text-success">All Invoices&nbsp;<span class="fa fa-link"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sales Module -->
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><strong><span class="fa fa-diamond">&nbsp;</span>Sales</strong></div>
+            <div class="panel-body">
+                <p><i>Sales management module</i></p>
+            </div>
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="#" class="text-success">New Sales&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="#" class="text-success">All Sales&nbsp;<span class="fa fa-link"></span></a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" class="text-success">All Sell&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="#" class="text-success">All Commission&nbsp;<span class="fa fa-link"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- Second Row -->
+<div class="row panel-body">
+
+    <!-- Product Module -->
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><strong><span class="fa fa-dropbox">&nbsp;</span>Product</strong></div>
+            <div class="panel-body">
+                <p><i>Plans & Devices management module</i></p>
+            </div>
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/manager/product/product_combo/new" class="text-success">New Product Combo&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="/manager/product/product_combo/all" class="text-success">All Product Combos&nbsp;<span class="fa fa-link"></span></a>&nbsp;<span class="label label-success">{{ home_info.productComboLength }}</span>
+                </li>
+                <li class="list-group-item">
+                    <a href="/manager/product/product_feature/new" class="text-success">New Product Feature&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="/manager/product/product_feature/all" class="text-success">All Product Features&nbsp;<span class="fa fa-link"></span></a>&nbsp;<span class="label label-success">{{ home_info.productFeatureLength }}</span>
+                </li>
+                <li class="list-group-item">
+                    <a href="/manager/product/plan/new" class="text-success">New Plan&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="/manager/product/plan/all" class="text-success">All Plans&nbsp;<span class="fa fa-link"></span></a>&nbsp;<span class="label label-success">{{ home_info.planLength }}</span>
+                </li>
+                <li class="list-group-item">
+                    <a href="/manager/product/device/new" class="text-success">New Device&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="/manager/product/device/all" class="text-success">All Devices&nbsp;<span class="fa fa-link"></span></a>&nbsp;<span class="label label-success">{{ home_info.deviceLength }}</span>
+                </li>
+                <li class="list-group-item">
+                    <a href="/manager/product/addon_service/new" class="text-success">New Add-On Service&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="/manager/product/addon_service/all" class="text-success">All Add-On Services&nbsp;<span class="fa fa-link"></span></a>&nbsp;<span class="label label-success">{{ home_info.addOnServiceLength }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Manager Module -->
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><strong><span class="fa fa-users">&nbsp;</span>Manager</strong></div>
+            <div class="panel-body">
+                <p><i>Manager management module</i></p>
+            </div>
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/manager/new" class="text-success">New Manager&nbsp;<span class="fa fa-link"></span></a><br/>
+                    <a href="/manager/all" class="text-success">All Managers&nbsp;<span class="fa fa-link"></span></a>&nbsp;<span class="label label-success">{{ home_info.managerLength }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

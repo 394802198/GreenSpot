@@ -1,0 +1,35 @@
+.tooltip.dangerClass .tooltip-inner {
+    color: #ffffff;
+    background-color: #d9534f;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.tooltip.dangerClass .tooltip-arrow {
+    display: none;
+}
+
+.tooltip.warningClass .tooltip-inner {
+     color: #ffffff;
+     background-color: #f0ad4e;
+     box-shadow: 0 6px 12px rgba(0,0,0,.175);
+ }
+.tooltip.warningClass .tooltip-arrow {
+    display: none;
+}
+
+.tooltip.infoClass .tooltip-inner {
+    color: #ffffff;
+    background-color: #5bc0de;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.tooltip.infoClass .tooltip-arrow {
+    display: none;
+}
+
+.tooltip.successClass .tooltip-inner {
+    color: #ffffff;
+    background-color: #5cb85c;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.tooltip.successClass .tooltip-arrow {
+    display: none;
+}

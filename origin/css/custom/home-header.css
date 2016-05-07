@@ -1,0 +1,23 @@
+/*
+ *		Author: Steven Chen
+ *		Date: Feb 2015
+ */
+
+/* CSS Reset */
+ul,li {
+    list-style:none;
+}
+textarea, input {
+    resize:none;
+    outline-color:rgb(100,195,200);
+    border:none;
+}
+body {
+    margin:0; padding:0;
+    background-repeat: no-repeat;
+}
+
+.container {
+    padding-left:0;
+    padding-right:0;
+}

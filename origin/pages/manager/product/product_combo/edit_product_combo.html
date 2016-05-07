@@ -1,0 +1,86 @@
+<!-- First Row -->
+
+<div class="row panel-body">
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-success">
+            <!-- Success panel contents -->
+            <div class="panel-heading text-center"><strong><span class="fa fa-dropbox">&nbsp;</span>Edit Product Combo</strong></div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Name</label>
+                        <div class="col-md-2">
+                            <input class="form-control" type="text"  ng-model="productCombo.name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Combined Plan</label>
+                        <div class="col-md-6">
+                            <ul style="padding: 0;">
+                                <li ng-repeat="plan in plans">
+                                    <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="checkbox" name="plans" ng-model="plan.is_checked" />{{ plan.name }}</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Shipping Fee</label>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
+                                <input class="form-control" ng-model="productCombo.shipping_fee" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Fee On Home Page</label>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
+                                <input class="form-control" ng-model="productCombo.fee_on_home_page" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Pay Frequency On Home Page</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="fee_on_home_page" ng-model="productCombo.pay_frequency_on_home_page" value="LUMP" />LUMP</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="fee_on_home_page" ng-model="productCombo.pay_frequency_on_home_page" value="WEEKLY" />WEEKLY</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="fee_on_home_page" ng-model="productCombo.pay_frequency_on_home_page" value="MONTHLY" />MONTHLY</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="fee_on_home_page" ng-model="productCombo.pay_frequency_on_home_page" value="ANNUAL" />ANNUAL</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Is On Home Page</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_on_home_page" ng-model="productCombo.is_on_home_page" value="YES" />YES</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_on_home_page" ng-model="productCombo.is_on_home_page" value="NO" />NO</label>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="productCombo.is_on_home_page=='YES'">
+                        <label class="control-label col-md-4">Product Features</label>
+                        <div class="col-md-6">
+                            <ul style="padding: 0;">
+                                <li ng-repeat="product_feature in product_features">
+                                    <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="checkbox" name="features" ng-model="product_feature.is_checked" />{{ product_feature.name }}</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Is On Shelf</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_on_shelf" ng-model="productCombo.is_on_shelf" value="YES" />YES</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_on_shelf" ng-model="productCombo.is_on_shelf" value="NO" />NO</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <button class="btn btn-success btn-block col-md-offset-4" ng-click="update()">UPDATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

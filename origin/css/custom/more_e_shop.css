@@ -1,0 +1,10 @@
+@media (min-width: 1920px) {
+    .more_e_shop_img {
+        width: 1920px;
+    }
+}
+@media (max-width: 1919px) {
+    .more_e_shop_img {
+        width: 100%;
+    }
+}

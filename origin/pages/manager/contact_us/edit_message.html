@@ -1,0 +1,61 @@
+<!-- First Row -->
+
+<div class="row panel-body">
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-success">
+            <!-- Success panel contents -->
+            <div class="panel-heading text-center"><strong><span class="fa fa-twitch">&nbsp;</span>Edit Message</strong></div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Email</label>
+                        <div class="col-md-6">
+                            <p class="form-control-static">{{ message.email }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Is Replied</label>
+                        <div class="col-md-6">
+                            <p class="form-control-static">{{ message.is_replied }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Received Datetime</label>
+                        <div class="col-md-6">
+                            <p class="form-control-static">{{ message.received_datetime }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Replied Datetime</label>
+                        <div class="col-md-6">
+                            <p class="form-control-static">{{ message.replied_datetime }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Received Message</label>
+                        <div class="col-md-6" style="border: 1px solid rgb(204,204,204); background-color: rgb(238,238,238); border-radius: 4px; margin: 1px 12px;">
+                            <div>{{ message.replied_datetime }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="message.is_replied=='YES'">
+                        <label class="control-label col-md-4">Replied Message</label>
+                        <div class="col-md-6" style="border: 1px solid rgb(204,204,204); background-color: rgb(238,238,238); border-radius: 4px; margin: 1px 12px;">
+                            <div ng-bind-html="message.reply | sanitize"></div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="message.is_replied=='NO'">
+                        <label class="control-label col-md-4">Reply Message</label>
+                        <div class="col-md-6">
+                            <textarea keditor ng-model="message.reply" data-config="config" class="form-control" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8" ng-show="message.is_replied=='NO'">
+                        <button class="btn btn-success btn-block col-md-offset-4" ng-click="reply()">REPLY</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

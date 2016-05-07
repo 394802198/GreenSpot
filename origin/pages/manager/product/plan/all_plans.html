@@ -1,0 +1,100 @@
+<!-- First Row -->
+<style>
+    .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+    .table>thead>tr>th {
+        font-size: 14px;;
+    }
+    .table td {
+        font-size: 12px;;
+    }
+
+    .pagination-ul.ng-enter, .pagination-ul.ng-leave {
+        transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all, 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) opacity;
+    }
+    .pagination-ul.ng-enter {
+        transform:translateX(100%);
+    }
+    .pagination-ul.ng-leave {
+        transform:translateX(0%);
+    }
+    .pagination-ul.ng-enter.ng-enter-active, .pagination-ul.ng-leave {
+        transform:translateX(0%);
+        opacity: 1;
+        top: 0;
+        height: 30px;
+    }
+    .pagination-ul.ng-leave.ng-leave-active {
+        transform:translateX(-100%);
+    }
+    .pagination-ul.ng-leave.ng-leave-active, .pagination-ul.ng-enter {
+        opacity: 0;
+        top: -50px;
+        height: 0px;
+    }
+</style>
+<div class="row panel-body">
+
+    <div class="col-md-12">
+        <div class="panel panel-success">
+            <!-- Success panel contents -->
+            <div class="panel-heading text-center"><strong><span class="fa fa-dropbox">&nbsp;</span>All Plans</strong></div>
+            <div class="panel-body">
+
+                <div class="col-md-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Filter any keyword</label>
+                            <div class="col-md-4">
+                                <input class="form-control" ng-model="pagination.keywords" type="text" placeholder="Enter something to filter data" ng-keyup="filterPlan()" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-12 text-center">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Lump</th>
+                                    <th>Weekly</th>
+                                    <th>Monthly</th>
+                                    <th>Annual</th>
+                                    <th>Lump Accepted</th>
+                                    <th>Weekly Accepted</th>
+                                    <th>Monthly Accepted</th>
+                                    <th>Annual Accepted</th>
+                                    <th>On Shelf</th>
+                                    <th>OPERATION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="pagination-ul" dir-paginate="plan in pagination.plans | filter:pagination.keywords | itemsPerPage: pagination.pageSize track by $id($index)" current-page="pagination.currentPage" ng-init="outerIndex=$index;">
+                                    <td ng-repeat="column in plan track by $id($index)" ng-if="$index>=1">
+                                    <span ng-if="$index==1">
+                                        <a class="text-success" href="/manager/product/plan/edit/{{ plan[0] }}/{{ plan[6] }}/{{ plan[7] }}/{{ plan[8] }}/{{ plan[9] }}/{{ plan[10] }}">{{ column }}&nbsp;<span class="fa fa-link"></span></a>
+                                    </span>
+                                        {{ $index>1 ? column : '' }}
+                                    </td>
+                                    <td ng-repeat="column in plan track by $id($index)" ng-if="$index==0">
+                                        <a class="btn btn-danger btn-md" tooltip="Click to DELETE FOREVER!" tooltip-class="dangerClass" ng-click="deletePlan(plan[0])"><span class="fa fa-trash"></span></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="panel-footer">
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChange(newPageNumber)"></dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+
+</div>

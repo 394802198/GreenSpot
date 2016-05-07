@@ -1,0 +1,93 @@
+<!-- First Row -->
+
+<div class="row panel-body">
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-success">
+            <!-- Success panel contents -->
+            <div class="panel-heading text-center"><strong><span class="fa fa-dropbox">&nbsp;</span>Edit Device</strong></div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Name</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text"  ng-model="device.name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Lump Fee Accepted?</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_lump_accepted" ng-model="device.is_lump_accepted" value="YES" />YES</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_lump_accepted" ng-model="device.is_lump_accepted" value="NO" />NO</label>
+                        </div>
+                        <div class="col-md-3 col-md-offset-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
+                                <input type="text" ng-model="device.lump_fee" class="form-control" placeholder="Fee of charge" ng-disabled="device.is_lump_accepted=='NO'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Weekly Fee Accepted?</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_weekly_accepted" ng-model="device.is_weekly_accepted" value="YES" />YES</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_weekly_accepted" ng-model="device.is_weekly_accepted" value="NO" />NO</label>
+                        </div>
+                        <div class="col-md-3 col-md-offset-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
+                                <input type="text" ng-model="device.weekly_fee" class="form-control" placeholder="Fee of charge" ng-disabled="device.is_weekly_accepted=='NO'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Monthly Fee Accepted?</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_monthly_accepted" ng-model="device.is_monthly_accepted" value="YES" />YES</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_monthly_accepted" ng-model="device.is_monthly_accepted" value="NO" />NO</label>
+                        </div>
+                        <div class="col-md-3 col-md-offset-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
+                                <input type="text" ng-model="device.monthly_fee" class="form-control" placeholder="Fee of charge" ng-disabled="device.is_monthly_accepted=='NO'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Annual Fee Accepted?</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_annual_accepted" ng-model="device.is_annual_accepted" value="YES" />YES</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_annual_accepted" ng-model="device.is_annual_accepted" value="NO" />NO</label>
+                        </div>
+                        <div class="col-md-3 col-md-offset-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
+                                <input type="text" ng-model="device.annual_fee" class="form-control" placeholder="Fee of charge" ng-disabled="device.is_annual_accepted=='NO'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Is On Shelf</label>
+                        <div class="col-md-6">
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_on_shelf" ng-model="device.is_on_shelf" value="YES" />YES</label>
+                            <label><input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_on_shelf" ng-model="device.is_on_shelf" value="NO" />NO</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">
+                            Brief Description
+                        </label>
+                        <div class="col-md-6">
+                            <a href="javascript:void(0);" class="pull-right" tooltip="{{ device.brief_description }}" tooltip-class="successClass"><span class="fa fa-eye text-success"></span></a><br/>
+                            <textarea class="form-control" rows="5" ng-model="device.brief_description" placeholder="Move mouse to the eye for preview after describes"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <button class="btn btn-success btn-block col-md-offset-4" ng-click="update()">UPDATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

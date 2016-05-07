@@ -1,0 +1,13 @@
+body.skip-animations * {
+    -webkit-transition:none!important;
+    -moz-transition:none!important;
+    -o-transition:none!important;
+    transition:none!important;
+}
+
+.page-body-outer { height: 100%; overflow-x: hidden; position: relative; }
+.page-body { position: absolute; width: 100%; z-index:1; }
+.page-body.ng-enter { transition: 1s all; opacity: 0; z-index:100; left:300px; top:-300px; }
+.page-body.ng-enter-active { transition: 1s all; opacity: 1; left:0; top:0; }
+/*.page-body.ng-leave { transition: 0.5s all; opacity: 1;  z-index:101; left:0; }*/
+/*.page-body.ng-leave-active { transition: 0.5s all; opacity: 0;  left:-100px; }*/

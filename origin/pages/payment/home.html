@@ -1,0 +1,253 @@
+
+<ng-include src="'pages/support_center/header.html'"></ng-include>
+
+<style>
+
+    .firstTwoProductComboName {
+        background-color: rgb(82,181,213); padding: 10px; border-radius: 6px 6px 0 0;
+    }
+    .firstTwoProductComboPrice {
+        background-color: rgb(99,194,221); padding: 10px;
+    }
+    .firstTwoProductComboPayFrequency {
+        background-color: rgb(99,194,221); padding: 4px; border-radius: 0 0 6px 6px; font-size: 12px;
+    }
+    .thirdProductComboName {
+        background-color: rgb(27,127,179); padding: 10px; border-radius: 6px 6px 0 0;
+    }
+    .thirdProductComboPrice {
+        background-color: rgb(70,174,210); padding: 10px;
+    }
+    .thirdProductComboPayFrequency {
+        background-color: rgb(70,174,210); padding: 4px; border-radius: 0 0 6px 6px; font-size: 12px;
+    }
+    .product_combo_li {
+        float: left; padding: 6px;
+    }
+    .selected_combo_li {
+        border: 4px solid #5cb85c; border-radius: 4px;
+    }
+
+    .show_hide_animation {
+        -webkit-transition:all linear 0.5s;
+        transition:all linear 0.5s;
+    }
+    .show_hide_animation.ng-hide {
+        opacity:0;
+    }
+
+</style>
+
+<div class="container-100-percent" style="background:rgb(229,229,229);">
+    <ul style="width:70%; padding-top:20px; padding-bottom:20px; margin:0 auto; position:relative;">
+        <li style="float:left;">&nbsp;</li>
+        <li style="float:left;">
+            <img alt="" src="/img/support-center/payment_cart_img.png">
+        </li>
+        <li style="float:left; padding-left:10px;">
+            <span style="font-size:30px;">Order Details</span><br/>
+            <span style="color:rgb(145,145,145);"><strong>Want a 30 Days trial? Call : 0800 00 1747.</strong></span>
+        </li>
+        <li style="clear:both;"></li>
+    </ul>
+</div>
+
+<div class="container-100-percent" style="background:#ffffff;">
+    <br/><br/>
+    <div class="container" style="width:72%;">
+        <ul>
+            <li class="col-md-8">
+                <form class="form-horizontal">
+                    <div class="form-group" style="color:rgb(81,173,150); font-size:20px;">
+                        <p class="form-control-static col-md-6">Product Combos</p>
+                    </div>
+                    <div class="form-group">
+                        <ul style="font-size: 20px;">
+                            <li ng-repeat="combo in productCombos" class="product_combo_li" ng-class="{ selected_combo_li : combo.id==productCombo.id }">
+                                <a href="javascript:;" ng-click="changeCombo(combo.id)" style="text-align: center; color: #ffffff; text-decoration: none;">
+                                    <div ng-class="{ firstTwoProductComboName : $index < productCombos.length-1, thirdProductComboName : $index == productCombos.length-1  }">
+                                        {{ combo.name }}
+                                    </div>
+                                    <div ng-class="{ firstTwoProductComboPrice : $index < productCombos.length-1, thirdProductComboPrice : $index == productCombos.length-1  }">
+                                        NZ$&nbsp;{{ combo.fee_on_home_page }}
+                                    </div>
+                                    <div ng-class="{ firstTwoProductComboPayFrequency : $index < productCombos.length-1, thirdProductComboPayFrequency : $index == productCombos.length-1  }">
+                                        {{ combo.pay_frequency_on_home_page }}
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group" style="color:rgb(81,173,150); font-size:20px;">
+                        <p class="form-control-static col-md-6">Product Modification</p>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            Want to change to other plans? Please click the pencil in cart.
+                        </div>
+                    </div>
+                    <div class="form-group" style="color:rgb(81,173,150); font-size:20px;">
+                        <p class="form-control-static col-md-12">Details about you:</p>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.first_name" type="text" placeholder="First name:" />
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.last_name" type="text" placeholder="Last name:" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.company" type="text" placeholder="Company:" />
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.mobile" type="text" placeholder="Mobile:" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.street" type="text" placeholder="Street:" />
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.suburb" type="text" placeholder="Suburb:" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.city" type="text" placeholder="City:" />
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="service.zip" type="text" placeholder="Zip:" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input class="form-control" ng-model="service.email" type="text" placeholder="Email:" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="color:rgb(81,173,150); font-size:20px;">
+                        <p class="form-control-static col-md-12">Business Type:</p>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <select class="form-control" ng-model="service.business_type">
+                                <option value="Hotel">Hotel</option>
+                                <option value="Restaurant">Restaurant</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="service.business_type=='Other'">
+                        <div class="col-md-12">
+                            <input class="form-control" ng-model="service.other_business_type" type="text" placeholder="Please provide your business type here" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="color:rgb(81,173,150); font-size:20px;">
+                        <p class="form-control-static col-md-12">Shipping address:</p>
+                    </div>
+                    <div class="form-group">
+                        <p class="form-control-static col-md-12">
+                            <label style="font-weight:normal; cursor:pointer;">
+                                <input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_new_shipping_address" ng-model="service.is_new_shipping_address" value="NO" />
+                                Shipping address is the same as your company address.
+                            </label>
+                        </p>
+                        <p class="form-control-static col-md-12">
+                            <label style="font-weight:normal; cursor:pointer;">
+                                <input icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" type="radio" name="is_new_shipping_address" ng-model="service.is_new_shipping_address" value="YES" />
+                                Enter a new shipping address
+                            </label>
+                        </p>
+                    </div>
+                    <div ng-show="service.is_new_shipping_address=='YES'" class="show_hide_animation">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_first_name" type="text" placeholder="First name:" />
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_last_name" type="text" placeholder="Last name:" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_company" type="text" placeholder="Company:" />
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_mobile" type="text" placeholder="Mobile:" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_street" type="text" placeholder="Street:" />
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_suburb" type="text" placeholder="Suburb:" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_city" type="text" placeholder="City:" />
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="service.shipping_zip" type="text" placeholder="Zip:" />
+                            </div>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <a href="javascript:void(0);" ng-click="checkout()" class="btn btn-info btn-block" style="background:rgb(88,136,225);">Buy Now</a>
+                        </div>
+                        <div class="col-md-4" style="padding-top:15px;">
+                            <img alt="" width="74%" src="/img/support-center/visa_master_a2a_img.png">
+                        </div>
+                    </div>
+                </form>
+            </li>
+
+
+            <li class="col-md-4" id="summary_li" style="padding-left:20px;">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <h2 style="color:#000;">Summary</h2>
+                        <img alt="" width="100%" src="/img/support-center/dual_hr_img.png">
+                    </div>
+                    <br/>
+                    <div class="form-group" style="font-size:12px; color:rgb(160,160,160);">
+                        <span class="col-md-6" style="padding:0;">PRODUCT</span>
+                        <div class="col-md-6" style="text-align:right; padding:0;">QUANTITY AND PRICE</div>
+                        <br/>
+                        <hr style="margin:15px 0 0 0;"/>
+                    </div>
+                    <div class="form-group" style="font-size:12px;" ng-repeat="service_plan in service_plans">
+                        <span class="col-md-8" style="padding-left:8px;" ng-show="service_plan.has_device && service_plan.is_changing_plan=='YES'"><select ng-model="plan" ng-change="changePlan(plan, service_plan)" class="form-control input-sm"><option ng-repeat="plan in plans" ng-selected="plan.id == service_plan.id" value="{{ plan }}">{{ plan.name }}</option></select></span>
+                        <span class="col-md-8" style="padding-left:8px;" ng-show="!service_plan.has_device || (service_plan.has_device && service_plan.is_changing_plan=='NO')">PLAN : {{ service_plan.name }}&nbsp;<span class="fa fa-question-circle" tooltip="{{ service_plan.brief_description }}" tooltip-class="successClass"></span>&nbsp;<a class="btn btn-success btn-xs" ng-show="service_plan.has_device" ng-click="service_plan.is_changing_plan='YES'" tooltip="Change plan" tooltip-class="successClass" tooltip-placement="bottom"><span class="fa fa-pencil"></span></a></span>
+                        <div class="col-md-4" style="text-align:right; padding:0;">1 × ${{ service_plan.annual_fee }}</div>
+                    </div>
+                    <div class="form-group" style="font-size:12px;" ng-repeat="device in service_devices" ng-show="service_devices.length > 0">
+                        <span class="col-md-8" style="padding-left:8px;">DEVICE : {{ device.name }}&nbsp;<span class="fa fa-question-circle" tooltip="{{ device.brief_description }}" tooltip-class="successClass"></span></span>
+                        <div class="col-md-4" style="text-align:right; padding:0;" ng-show="device.is_changing_qty=='YES'"><select ng-model="qty" ng-change="changeQty(qty, device)" class="form-control input-sm"><option ng-repeat="qty in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]" ng-selected="qty == device.qty" value="{{ qty }}">{{ qty }}</option></select>&nbsp;× ${{ device.annual_fee }}</div>
+                        <div class="col-md-4" style="text-align:right; padding:0;" ng-show="device.is_changing_qty=='NO'">{{ device.qty }}&nbsp;<a class="btn btn-success btn-xs" ng-click="device.is_changing_qty='YES'" tooltip="Change qty" tooltip-class="successClass" tooltip-placement="bottom"><span class="fa fa-pencil"></span></a>&nbsp;× ${{ device.annual_fee }}</div>
+                    </div>
+                    <div class="form-group" style="font-size:12px;" ng-repeat="addon_service in service_addon_services">
+                        <span class="col-md-8" style="padding-left:8px;">ADDON : {{ addon_service.name }}&nbsp;<span class="fa fa-question-circle" tooltip="{{ addon_service.brief_description }}" tooltip-class="successClass"></span></span>
+                        <div class="col-md-4" style="text-align:right; padding:0;">1 × ${{ addon_service.lump_fee }}</div>
+                    </div>
+                    <div class="form-group">
+                        <img alt="" width="100%" src="/img/support-center/dual_hr_img.png"><br/><br/>
+                        <span class="col-md-6">Shiping cost</span>
+                        <div class="col-md-6" style="text-align:right; padding:0;">${{ service.shipping_fee }}</div>
+                    </div>
+                    <div class="form-group" style="background:rgb(255,250,144); padding:20px; color:#000; font-size:24px;">
+                        <span class="col-md-6">Total</span>
+                        <div class="col-md-6" style="text-align:right; padding:0;" >$<span data-name="total_cost_span">{{ service_total_payable }}</span></div>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-include src="'pages/support_center/bottom-nav.html'"></ng-include>

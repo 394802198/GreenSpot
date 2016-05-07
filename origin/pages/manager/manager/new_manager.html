@@ -1,0 +1,118 @@
+<!-- First Row -->
+
+<div class="row panel-body">
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-success">
+            <!-- Success panel contents -->
+            <div class="panel-heading text-center"><strong><span class="fa fa-user">&nbsp;</span>New Manager</strong></div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Account</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text"  ng-model="manager.account" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Role</label>
+                        <div class="col-md-6">
+                            <select class="form-control" icheck-selector ng-model="manager.role" ng-change="changeRole(manager.role)">
+                                <option value="developer">Developer</option>
+                                <option value="administrator">Administrator</option>
+                                <option value="accountant">Accountant</option>
+                                <option value="provision">Provision</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Password</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="password" ng-model="manager.password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Password confirm</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="password" ng-model="manager.password_confirm" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">First name</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" ng-model="manager.first_name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Last name</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text"  ng-model="manager.last_name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Email</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text"  ng-model="manager.email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Mobile</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text"  ng-model="manager.mobile" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Landline</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text"  ng-model="manager.landline" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <h4>Plan</h4>
+                            <label ng-repeat="(name,is_authorized) in authorization_linkages_status | authorized_linkages_filter:['Product Combo','Product Feature','Plan','Device']" class="center-block">
+                                <input type="checkbox" icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" ng-model="authorization_linkages_status[name]" data-icheck-developer data-icheck-administrator  data-icheck-checkbox /> {{ name  }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Service</h4>
+                            <label ng-repeat="(name,is_authorized) in authorization_linkages_status | authorized_linkages_filter:['Service','Provision']" class="center-block">
+                                <input type="checkbox" icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" ng-model="authorization_linkages_status[name]" data-icheck-developer data-icheck-administrator data-icheck-accountant data-icheck-provision data-icheck-checkbox /> {{ name  }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Billing</h4>
+                            <label ng-repeat="(name,is_authorized) in authorization_linkages_status | authorized_linkages_filter:['Billing','Invoice']" class="center-block">
+                                <input type="checkbox" icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" ng-model="authorization_linkages_status[name]" data-icheck-developer data-icheck-administrator data-icheck-accountant data-icheck-checkbox /> {{ name  }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Sales</h4>
+                            <label ng-repeat="(name,is_authorized) in authorization_linkages_status | authorized_linkages_filter:['Sales','Sell','Commission']" class="center-block">
+                                <input type="checkbox" icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" ng-model="authorization_linkages_status[name]" data-icheck-developer data-icheck-administrator data-icheck-checkbox /> {{ name  }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <h4>Manager</h4>
+                            <label ng-repeat="(name,is_authorized) in authorization_linkages_status | authorized_linkages_filter:['Manager']" class="center-block">
+                                <input type="checkbox" icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" ng-model="authorization_linkages_status[name]" data-icheck-developer data-icheck-administrator data-icheck-checkbox /> {{ name  }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Contact Us</h4>
+                            <label ng-repeat="(name,is_authorized) in authorization_linkages_status | authorized_linkages_filter:['Message']" class="center-block">
+                                <input type="checkbox" icheck checkboxClass="icheckbox_square-green" radioClass="iradio_square-green" ng-model="authorization_linkages_status[name]" data-icheck-developer data-icheck-administrator data-icheck-accountant data-icheck-provision data-icheck-checkbox /> {{ name  }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <button class="btn btn-success btn-block col-md-offset-4" ng-click="create(manager)">CREATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
